@@ -35,35 +35,36 @@ def partition_values_from_index(values, start_index, total_value, unassigned_val
                                          test_assignment, test_value,
                                          best_assignment, best_err)
 
-# def main():
-#     files = ['kecil', 'sedang', 'besar']
-#     kecil = []
-#     sedang = []
-#     besar = []
-#     vars = [kecil, sedang, besar]
+def main():
+    files = ['kecil', 'sedang', 'besar']
+    kecil = []
+    sedang = []
+    besar = []
+    vars = [kecil, sedang, besar]
 
-#     for i, file in enumerate(files):
-#         with open('cases/' + file + '.in', 'r') as file:
-#             lines = file.readlines()
+    for i, file in enumerate(files):
+        with open('cases/' + file + '.in', 'r') as file:
+            lines = file.readlines()
 
-#         vars[i] = [int(line.strip()) for line in lines]
-#         print(f'TC {files[i]}: ')
-#         print(vars[i])
-#         print()
+        vars[i] = [int(line.strip()) for line in lines]
+        print(f'TC {files[i]}: ')
+        print(vars[i])
+        print()
 
-#     for i, var in enumerate(vars):
-#         total_value = sum(var)
-#         unassigned_value = total_value
-#         test_assignment = [False] * len(var)
-#         test_value = 0
-#         best_assignment = [False] * len(var)
-#         best_err = [float('inf')]
+    for i, var in enumerate(vars):
+        total_value = sum(var)
+        unassigned_value = total_value
+        test_assignment = [False] * len(var)
+        test_value = 0
+        best_assignment = [False] * len(var)
+        best_err = [float('inf')]
 
-#         print(f'TC {files[i]}: ')
-#         partition_values_from_index(var, 0, total_value, unassigned_value,
-#                                     test_assignment, test_value, best_assignment, best_err)
-#         print("Best Assignment:", best_assignment)
-#         print("Best Error:", best_err[0])
-#         print()
+        print(f'TC {files[i]}: ')
+        partition_values_from_index(var, 0, total_value, unassigned_value,
+                                    test_assignment, test_value, best_assignment, best_err)
+        print("Best Assignment:", best_assignment)
+        print("Best Error:", best_err[0])
+        print()
 
-# main()
+if __name__ == '__main__':
+    main()

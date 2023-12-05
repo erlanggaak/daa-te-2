@@ -51,26 +51,27 @@ def findPartition(arr, n):
     # half of total sum
     return isSubsetSum(arr, n, sum // 2, dp)
  
-# def main():
-#     files = ['kecil', 'sedang', 'besar']
-#     kecil = []
-#     sedang = []
-#     besar = []
-#     vars = [kecil, sedang, besar]
+def main():
+    files = ['kecil', 'sedang', 'besar']
+    kecil = []
+    sedang = []
+    besar = []
+    vars = [kecil, sedang, besar]
 
-#     for i, file in enumerate(files):
-#         with open('cases/' + file + '.in', 'r') as file:
-#             lines = file.readlines()
+    for i, file in enumerate(files):
+        with open('cases/' + file + '.in', 'r') as file:
+            lines = file.readlines()
 
-#         vars[i] = [int(line.strip()) for line in lines]
-#         print(f'TC {files[i]}: ')
-#         print(vars[i])
-#         print()
+        vars[i] = [int(line.strip()) for line in lines]
+        print(f'TC {files[i]}: ')
+        print(vars[i])
+        print()
 
-#     for i, var in enumerate(vars):
-#         if (findPartition(var, len(var)) == True):
-#             print(f"TC {files[i]} Can be divided into two subsets of equal sum")
-#         else:
-#             print(f"TC {files[i]} Can not be divided into two subsets of equal sum")
+    for i, var in enumerate(vars):
+        if (findPartition(var, len(var)) == True):
+            print(f"TC {files[i]} Can be divided into two subsets of equal sum")
+        else:
+            print(f"TC {files[i]} Can not be divided into two subsets of equal sum")
  
-# main()
+if __name__ == '__main__':
+    main()
